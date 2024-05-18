@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May  16 20:11:05 2024
+@author: bih13
+"""
+
+import streamlit as st
+import joblib
+from PIL import Image
+
+# Load your trained model and vectorizer
+filepath = 'C:/Users/bih13/OneDrive/Documents/MX/Term 2/2 - MIS-542-Adv Bus Analytics-Dr. Mousa/Project/Team4model_nb.pkl'
+model = joblib.load(filepath )
+filepath2 = 'C:/Users/bih13/OneDrive/Documents/MX/Term 2/2 - MIS-542-Adv Bus Analytics-Dr. Mousa/Project/Team4vectorizer_pipeline.pkl'
+vectorizer = joblib.load(filepath2 )
+
+def predict(email_text):
+    processed_text = vectorizer.transform([email_text])
+    prediction = model.predict(processed_text)
+    return prediction[0]
+
+# Display an image from a URL
+image_url = "https://miro.medium.com/v2/resize:fit:1400/0*mbFBPcPUJD-53v3h.png"
+st.image(image_url, caption="Spam Detection", use_column_width=True)
+
+st.title("Team 4 Project")
+st.markdown("### Email Spam Detection App")
+
+email_input = st.text_area("Enter your email text and we will check it for you for free!:")
+
+if st.button("Predict"):
+    prediction = predict(email_input)
+    st.write(f"Prediction: {prediction}")
