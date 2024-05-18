@@ -3,17 +3,16 @@
 Created on Thu May  16 20:11:05 2024
 @author: bih13
 """
-
+import pandas as pd
 import streamlit as st
-#import joblib
-git clone https://github.com/BaderIAlharbi/Team4.git
+import pickle
 from PIL import Image
 
 # Load your trained model and vectorizer
 filepath = 'Team4model_nb.pkl'
-model = load(filepath )
+model = pd.read_pickle(filepath )
 filepath2 = 'Team4vectorizer_pipeline.pkl'
-vectorizer = joblib.load(filepath2 )
+vectorizer = pd.read_pickle(filepath2 )
 
 def predict(email_text):
     processed_text = vectorizer.transform([email_text])
