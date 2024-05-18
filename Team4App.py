@@ -34,6 +34,19 @@ except Exception as e:
     st.error(f"Error loading model or vectorizer: {e}")
     st.stop()
 
+# Streamlit app layout
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("");
+        background-size: cover;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Display the image
 st.image(image_url, caption='Team 4 Project', use_column_width=True)
 
