@@ -6,6 +6,7 @@ Created on Thu May  16 20:11:05 2024
 
 import streamlit as st
 #import joblib
+git clone https://github.com/BaderIAlharbi/Team4.git
 from PIL import Image
 
 # Load your trained model and vectorizer
