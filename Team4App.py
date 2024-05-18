@@ -9,10 +9,10 @@ import pickle
 from PIL import Image
 
 # Load your trained model and vectorizer
-filepath = 'Team4model_nb.pkl'
-model = pd.read_pickle(filepath )
-filepath2 = 'Team4vectorizer_pipeline.pkl'
-vectorizer = pd.read_pickle(filepath2 )
+#filepath = 'Team4model_nb.pkl'
+#model = pd.read_pickle(filepath )
+#filepath2 = 'Team4vectorizer_pipeline.pkl'
+#vectorizer = pd.read_pickle(filepath2 )
 
 def predict(email_text):
     processed_text = vectorizer.transform([email_text])
