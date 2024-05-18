@@ -34,13 +34,15 @@ except Exception as e:
     st.error(f"Error loading model or vectorizer: {e}")
     st.stop()
 
-# Streamlit app layout
+# Streamlit app layout with Background image
 st.markdown(
     """
     <style>
     .stApp {
         background-image: url("https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/AdobeStock_376092029_Preview.jpeg");
         background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
     </style>
     """,
