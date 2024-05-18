@@ -5,13 +5,13 @@ Created on Thu May  16 20:11:05 2024
 """
 
 import streamlit as st
-import joblib
+#import joblib
 from PIL import Image
 
 # Load your trained model and vectorizer
-filepath = 'C:/Users/bih13/OneDrive/Documents/MX/Term 2/2 - MIS-542-Adv Bus Analytics-Dr. Mousa/Project/Team4model_nb.pkl'
+filepath = 'Team4model_nb.pkl'
 model = joblib.load(filepath )
-filepath2 = 'C:/Users/bih13/OneDrive/Documents/MX/Term 2/2 - MIS-542-Adv Bus Analytics-Dr. Mousa/Project/Team4vectorizer_pipeline.pkl'
+filepath2 = 'Team4vectorizer_pipeline.pkl'
 vectorizer = joblib.load(filepath2 )
 
 def predict(email_text):
