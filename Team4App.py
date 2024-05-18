@@ -5,7 +5,8 @@ Created on Thu May  16 20:11:05 2024
 """
 
 import streamlit as st
-#import joblib
+pip install joblib
+import joblib
 from PIL import Image
 
 # Load your trained model and vectorizer
