@@ -5,7 +5,7 @@ Created on Thu May  16 20:11:05 2024
 """
 
 import streamlit as st
-pip install joblib
+!pip install joblib
 import joblib
 from PIL import Image
 
