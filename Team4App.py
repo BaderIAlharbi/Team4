@@ -85,9 +85,11 @@ if st.button("Predict"):
             #prediction = "Spam"  # Example prediction value
             st.markdown(f'<p class="custom-text-label">Prediction: {prediction}</p>', unsafe_allow_html=True)
         except Exception as e:
-            st.error(f"Error during prediction: {e}")
+            #st.error(f"Error during prediction: {e}")
+            st.markdown(f'<p class="custom-text-label">Error during prediction: {e}</p>', unsafe_allow_html=True)
     else:
-        st.write("Please enter a message to predict.")
+        #st.write("Please enter a message to predict.")
+        st.markdown(f'<p class="custom-text-label">Please enter a message to predict, come on!</p>', unsafe_allow_html=True)
 
 # Display the image
 st.image(image_url, caption='Team 4 Project', use_column_width=True)
