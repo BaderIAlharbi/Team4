@@ -51,14 +51,24 @@ st.markdown(
         padding: 5px;  /* Add some padding for better readability */
         display: inline-block;  /* Ensure the highlight doesn't stretch */
     }
+    .highlight-text {
+        background-color: black;  /* Highlight color */
+        color: white;  /* Text color to contrast with black background */
+        padding: 5px;  /* Add some padding for better readability */
+        display: inline-block;  /* Ensure the highlight doesn't stretch */
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
 
 # Streamlit app layout
-st.title("Team 4 Project")
-st.markdown("### Email Spam Detection App")
+#st.title("Team 4 Project")
+# Title with black highlight
+st.markdown('<h1 class="highlight-text">Team 4 Project</h1>', unsafe_allow_html=True)
+#st.markdown("### Email Spam Detection App")
+# Header with black highlight
+st.markdown('<h2 class="highlight-text">Email Spam Detection App</h2>', unsafe_allow_html=True)
 
 st.markdown('<label class="custom-text-label">Enter your email text and we will check it for you for free!:</label>', unsafe_allow_html=True)
 input_text = st.text_area("", "")
