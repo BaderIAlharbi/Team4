@@ -19,7 +19,7 @@ def download_file(url, filename):
         file.write(response.content)
     return filename
 
-#URLs of the files in the GitHub repository
+# URLs of the files in the GitHub repository
 pipeline_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/Team4vectorizer_pipeline.pkl"
 model_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/Team4model_nb.pkl"
 
