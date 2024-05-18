@@ -2,4 +2,7 @@ streamlit
 joblib
 requests
 pandas
+numpy
+scikit-learn
+nltk
 pillow
