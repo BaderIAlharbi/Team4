@@ -7,6 +7,29 @@ import pandas as pd
 import streamlit as st
 import pickle
 from PIL import Image
+import joblib
+import requests
+import os
+
+# URLs of the files in the GitHub repository
+pipeline_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/Team4vectorizer_pipeline.pkl"
+model_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/Team4model_nb.pkl"
+
+# Download the pipeline file
+pipeline_response = requests.get(pipeline_url)
+pipeline_path = "Team4vectorizer_pipeline.pkl"
+with open(pipeline_path, "wb") as file:
+    file.write(pipeline_response.content)
+
+# Download the model file
+model_response = requests.get(model_url)
+model_path = "Team4model_nb.pkl"
+with open(model_path, "wb") as file:
+    file.write(model_response.content)
+
+# Load the pipeline and model using joblib
+vectorizer = joblib.load(pipeline_path)
+model = joblib.load(model_path)
 
 # Load your trained model and vectorizer
 #filepath = 'Team4model_nb.pkl'
