@@ -45,16 +45,16 @@ st.markdown(
         background-attachment: fixed;
     }
     .custom-text-label {
-        color: green;  /* Changed the color to green */
+        color: green;  /* Text color */
+        background-color: yellow;  /* Highlight color */
         font-size: 18px;  /* Adjust the font size if needed */
+        padding: 5px;  /* Add some padding for better readability */
+        display: inline-block;  /* Ensure the highlight doesn't stretch */
     }
     </style>
     """,
     unsafe_allow_html=True
 )
-
-# Display the image
-st.image(image_url, caption='Team 4 Project', use_column_width=True)
 
 # Streamlit app layout
 st.title("Team 4 Project")
@@ -76,3 +76,7 @@ if st.button("Predict"):
             st.error(f"Error during prediction: {e}")
     else:
         st.write("Please enter a message to predict.")
+
+# Display the image
+st.image(image_url, caption='Team 4 Project', use_column_width=True)
+
