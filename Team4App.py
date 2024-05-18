@@ -11,10 +11,22 @@ import joblib
 import requests
 import os
 
+@st.cache(allow_output_mutation=True)
+def download_file(url, filename):
+    response = requests.get(url)
+    with open(filename, "wb") as file:
+        file.write(response.content)
+    return filename
+
 # URLs of the files in the GitHub repository
 pipeline_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/Team4vectorizer_pipeline.pkl"
 model_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/Team4model_nb.pkl"
 
+# Download and load the pipeline and model
+pipeline_path = download_file(pipeline_url, "Team4vectorizer_pipeline.pkl")
+model_path = download_file(model_url, "Team4model_nb.pkl")
+
+'''
 # Download the pipeline file
 pipeline_response = requests.get(pipeline_url)
 pipeline_path = "Team4vectorizer_pipeline.pkl"
@@ -26,6 +38,7 @@ model_response = requests.get(model_url)
 model_path = "Team4model_nb.pkl"
 with open(model_path, "wb") as file:
     file.write(model_response.content)
+'''
 
 # Load the pipeline and model using joblib
 vectorizer = joblib.load(pipeline_path)
