@@ -94,3 +94,5 @@ if st.button("Predict"):
 # Display the image
 st.image(image_url, caption='Team 4 Project', use_column_width=True)
 
+# Disclaimer
+st.markdown(f'<p class="custom-text-label">Disclaimer: This is an academic project with limited training size of 5,572 emails only!, please do not rely on this tool, cheers!</p>', unsafe_allow_html=True)
