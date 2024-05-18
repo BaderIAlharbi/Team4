@@ -44,6 +44,10 @@ st.markdown(
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+    .custom-text-label {
+        color: green;  /* Changed the color to green */
+        font-size: 18px;  /* Adjust the font size if needed */
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -56,7 +60,10 @@ st.image(image_url, caption='Team 4 Project', use_column_width=True)
 st.title("Team 4 Project")
 st.markdown("### Email Spam Detection App")
 
-input_text = st.text_area("Enter your email text and we will check it for you for free!:", "")
+st.markdown('<label class="custom-text-label">Enter your email text and we will check it for you for free!:</label>', unsafe_allow_html=True)
+input_text = st.text_area("", "")
+
+#input_text = st.text_area("Enter your email text and we will check it for you for free!:", "")
 
 if st.button("Predict"):
     if input_text:
