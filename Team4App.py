@@ -34,10 +34,10 @@ except Exception as e:
     st.stop()
 
 # Streamlit app layout
-st.title("Team 4 Project - Spam Detection")
-st.write("Enter the text of the message you want to classify:")
+st.title("Team 4 Project")
+st.markdown("### Email Spam Detection App")
 
-input_text = st.text_area("Message Text", "Type your message here...")
+input_text = st.text_area("Enter your email text and we will check it for you for free!:", "")
 
 if st.button("Classify"):
     if input_text:
