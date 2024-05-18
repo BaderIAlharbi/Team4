@@ -81,7 +81,9 @@ if st.button("Predict"):
             processed_text = vectorizer.transform([input_text])
             prediction = model.predict(processed_text)
             #result = "Spam" if prediction[0] == 1 else "Not Spam"
-            st.write(f"Prediction: {prediction}")
+            #st.write(f"Prediction: {prediction}")
+            #prediction = "Spam"  # Example prediction value
+            st.markdown(f'<p class="custom-text-label">Prediction: {prediction}</p>', unsafe_allow_html=True)
         except Exception as e:
             st.error(f"Error during prediction: {e}")
     else:
