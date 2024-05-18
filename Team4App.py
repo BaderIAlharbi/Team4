@@ -10,7 +10,6 @@ import requests
 import joblib
 import os
 
-# Define function to download and cache files using Streamlit's caching mechanism
 @st.cache(allow_output_mutation=True)
 def download_file(url, filename):
     response = requests.get(url)
@@ -53,6 +52,7 @@ if st.button("Classify"):
             st.error(f"Error during prediction: {e}")
     else:
         st.write("Please enter a message to classify.")
+
 
 
 '''
