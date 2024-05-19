@@ -20,15 +20,15 @@ def download_file(url, filename):
 
 # URLs of the files in the GitHub repository
 pipeline_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/Team_4_vectorizer.pkl"
-model1_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/Team_4_knn_spam_detection_model_nb.pkl"
-model2_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/Team_4_nb_spam_detection_model_nb.pkl"
+model1_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/Team_4_knn_spam_detection_model.pkl"
+model2_url = "https://raw.githubusercontent.com/BaderIAlharbi/Team4/main/Team_4_nb_spam_detection_model.pkl"
 image_url = "https://miro.medium.com/v2/resize:fit:1400/0*mbFBPcPUJD-53v3h.png" 
 
 try:
     # Download and load the pipeline and model
     pipeline_path = download_file(pipeline_url, "Team_4_vectorizer.pkl")
-    model1_path = download_file(model1_url, "Team_4_knn_spam_detection_model_nb.pkl")
-    model2_path = download_file(model2_url, "Team_4_nb_spam_detection_model_nb.pkl")
+    model1_path = download_file(model1_url, "Team_4_knn_spam_detection_model.pkl")
+    model2_path = download_file(model2_url, "Team_4_nb_spam_detection_model.pkl")
 
     vectorizer = joblib.load(pipeline_path)
     model1 = joblib.load(model1_path)
